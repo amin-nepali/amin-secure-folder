@@ -1,16 +1,33 @@
-# React + Vite
+# Amin Secure Folder
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A browser-based file organizer with local file storage and same-network AShare transfers.
 
-Currently, two official plugins are available:
+## Run the app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Install dependencies and start the development server:
 
-## React Compiler
+```sh
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Share files between devices on the same Wi-Fi/LAN
 
-## Expanding the Oxlint configuration
+AShare needs the LAN server so the two browsers can find each other. On the computer hosting the app, run:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```sh
+npm run lan
+```
+
+This builds the app and starts a local server. Open the `http://...` network address printed in the terminal on both devices. In AShare, choose **Receive** on one device and share its temporary code with the sender; on the other device choose **Send**, enter the code, choose one file, and send it. The receiver saves incoming files into that browser's local file library. Codes expire after 10 minutes and accept one sender.
+
+Each transferred file is limited to 20 MiB. The server binds to all network interfaces so devices on the same Wi-Fi/LAN can connect. Use only a trusted private network: the local HTTP/WebSocket transfer is not end-to-end encrypted, and the browser cannot identify or confirm the Wi-Fi network name. Stop the server when sharing is finished.
+
+Files saved in the browser library use IndexedDB and remain on that device/browser; they are not cloud-synced. AShare is a temporary direct relay through the hosting computer, not a cloud-storage service.
+
+## Checks
+
+```sh
+npm run build
+npm run lint
+```
