@@ -292,6 +292,9 @@ function App() {
         const incoming = incomingFileRef.current
         if (!incoming || incoming.received !== incoming.size) {
           setShareError('The transfer was incomplete. Please try again.')
+          setIsTransferring(false)
+          incomingFileRef.current = null
+          shareChunksRef.current = []
           return
         }
         const blob = new Blob(shareChunksRef.current, { type: incoming.fileType })
@@ -812,8 +815,8 @@ function App() {
                       {shareFile ? shareFile.name : 'Choose a file (max 20 MB)'}
                     </button>
                     {sharePeerFound && shareFile && (
-                      <button type="button" className="share-primary-button" onClick={sendShareFile}>
-                        Send file
+                      <button type="button" className="share-primary-button" disabled={isTransferring} onClick={sendShareFile}>
+                          {isTransferring ? 'Sending…' : 'Send file'}
                       </button>
                     )}
                   </div>
