@@ -1,0 +1,72 @@
+@import '@fontsource/roboto-serif/400.css';
+@import '@fontsource/roboto-serif/500.css';
+@import '@fontsource/roboto-serif/600.css';
+@import '@fontsource/roboto-serif/700.css';
+@import 'material-symbols';
+
+:root {
+  color-scheme: light;
+  --md-sys-color-primary: #2e6a45;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #b0f1c2;
+  --md-sys-color-on-primary-container: #00210f;
+  --md-sys-color-secondary: #516356;
+  --md-sys-color-secondary-container: #d3e8d8;
+  --md-sys-color-on-secondary-container: #102016;
+  --md-sys-color-tertiary-container: #c2e8ff;
+  --md-sys-color-on-tertiary-container: #001e2c;
+  --md-sys-color-surface: #f6fbf4;
+  --md-sys-color-surface-container-low: #f0f5ee;
+  --md-sys-color-surface-container: #eaf0e8;
+  --md-sys-color-surface-container-high: #e4eae2;
+  --md-sys-color-surface-container-highest: #dee4dc;
+  --md-sys-color-on-surface: #181d18;
+  --md-sys-color-on-surface-variant: #414941;
+  --md-sys-color-outline: #707972;
+  --md-sys-color-outline-variant: #bfc9c0;
+  --md-sys-color-inverse-surface: #2d322d;
+  --md-sys-color-inverse-on-surface: #eef2eb;
+  --md-sys-color-inverse-primary: #95d5a7;
+  --md-sys-color-error: #b3261e;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #f9dedc;
+  --md-sys-color-on-error-container: #410e0b;
+  --md-ref-typeface-brand: 'Roboto Serif', serif;
+  --md-sys-typescale-headline-medium-emphasized-font: 'Roboto Serif', serif;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--md-sys-color-surface);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+button,
+input,
+md-outlined-text-field {
+  font: inherit;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
