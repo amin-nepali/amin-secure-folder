@@ -791,7 +791,7 @@ function App() {
                         autoComplete="off"
                         spellCheck="false"
                       />
-                      <button type="button" className="share-secondary-button" onClick={connectToReceiver}>
+                      <button type="button" className="share-secondary-button" disabled={sharePeerFound} onClick={connectToReceiver}>
                         Connect
                       </button>
                     </div>
